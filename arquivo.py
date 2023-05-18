@@ -21,7 +21,7 @@ def menuOpcoes():
             raise TypeError
         return opcao
     except ValueError:
-        print("Por favor, informe somente o número da opção!")
+        print("Por favor, informe somente o números dentro das opções disponíveis!")
         print("Aguarde 1 segundo que irá reiniciar automaticamente!")
         time.sleep(1) # Para dar tempo do usuário ler o que ele fez de errado antes de reiniciar novamente
     except TypeError:
