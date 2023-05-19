@@ -21,6 +21,7 @@ precosVinho = {
 
 carrinho = []
 
+# Função de adicionar ao carrinho -> ainda falta ajustes
 def adicionarCarrinho():
     vinho = input("Digite o nome do vinho desejado: ").lower().replace(" ", "")
     

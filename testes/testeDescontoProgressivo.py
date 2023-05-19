@@ -43,7 +43,7 @@ def adicionarCarrinho():
 
 adicionarCarrinho()
 
-# Função para desconto progressivo
+# Função para desconto progressivo (finalizar)
 def descontoProgressivo():
     # Caso o carrinho possua mais de 3 garrafas
     if (len(carrinho) == 3): # desconto de 10% => 0.1
