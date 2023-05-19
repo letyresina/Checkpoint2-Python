@@ -32,6 +32,30 @@ def menuOpcoes():
         print("Aguarde 1 segundo que irá reiniciar automaticamente!")
         time.sleep(1) # Para dar tempo do usuário ler o que ele fez de errado antes de reiniciar novamente
 
+# Função para listar vinhos e deixar o código do looping mais clean
+def listarVinhos():
+    print("-------------------------------------------------------------------")
+    print("Vinhos Tintos:")
+    print("• Carbenet Sauvignon – R$ 100,00")
+    print("• Pinot Noir – R$ 120,00")
+    print("• Tinto Malbec – R$ 80,00")
+    print("• Tinto Merlot – R$ 90,00")
+    print("• Tinto Syrah – R$ 100,00")
+    print("-------------------------------------------------------------------")
+    print("Vinhos Brancos:")
+    print("• Chardonnay – R$ 80,00")
+    print("• Sauvignon Blanc – R$ 70,00")
+    print("• Riesling – R$ 90,00")
+    print("• Pinot Grigio – R$ 60,00")
+    print("-------------------------------------------------------------------")
+    print("Vinhos Rosés:")
+    print("• Cabernet Franc – R$ 70,00")
+    print("• Syrah – R$ 80,00")
+    print("• Grenache – R$ 60,00")
+    print("-------------------------------------------------------------------")
+    time.sleep(2) # Para dar tempo do usuário ler antes de aparecer o menu novamente
+
+
 
 # Mensagem de boas vindas
 print("Seja bem vindo(a) à loja virtual da Vinheria Agnello!")
@@ -41,7 +65,7 @@ while True:
     opcao = menuOpcoes()
     
     if opcao == 1:
-        print("Implementações futuras...")
+        listarVinhos()
     
     elif opcao == 4:
         if carrinho == []: # Vê se o carrinho está vazio
