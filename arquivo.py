@@ -69,7 +69,7 @@ while True:
     
     elif opcao == 4:
         if carrinho == []: # Vê se o carrinho está vazio
-            print("Por favor, insira produtos no seu carrinho!")
+            print("Por favor, insira produtos no seu carrinho antes de prosseguir!")
         else: 
             print("Implementação futura")
 
