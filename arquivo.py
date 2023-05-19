@@ -64,9 +64,19 @@ print("No que podemos te ajudar hoje?")
 while True:
     opcao = menuOpcoes()
     
+    # Lista vinhos
     if opcao == 1:
         listarVinhos()
+
+    # Adicionar vinhos no carrinho
+    elif opcao == 2:
+         print("Implementação futura")
+
+    # Visualizar carrinho de compras
+    elif opcao == 3:
+         print("Implementação futura")
     
+    # Finalizar compra
     elif opcao == 4:
         if carrinho == []: # Vê se o carrinho está vazio
             print("Por favor, insira produtos no seu carrinho antes de prosseguir!")
