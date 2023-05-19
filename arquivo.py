@@ -4,6 +4,27 @@
 
 import time # Essa importação vai ser utilizada no decorrer do programa para facilitar a visualização do usuário!
 
+# Lista que vai ser utilizada para encontrar os preços do vinho, sem a necessidade do usuário inserir os preços
+precosVinho = {
+    # Vinhos tintos
+    'carbenetsauvignon': 100.0,
+    'pinotnoir': 120.0,
+    'tintomalbec': 80.0,
+    'tintomerlot': 90.0,
+    'tintosyrah': 100.0,
+
+    # Vinhos brancos
+    'chardonnay': 80.0,
+    'sauvignonblanc': 70.0,
+    'riesling': 90.0,
+    'pinotgrigio': 60.0,
+
+    # Vinhos rosés
+    'cabernetfranc': 70.0,
+    'syrah': 80.0,
+    'grenache': 60
+} 
+
 # Variavel carrinho em forma de lista (vazia)
 carrinho = []
 
@@ -87,4 +108,3 @@ while True:
     elif opcao == 5: 
         print("Obrigada por utilizar nossa loja virtual! A Vinheria Agnello agradece pela sua escolha e confiança!")
         break
-    
