@@ -4,6 +4,9 @@
 
 import time # Essa importação vai ser utilizada no decorrer do programa para facilitar a visualização do usuário!
 
+# Variavel carrinho em forma de lista (vazia)
+carrinho = []
+
 # Menu de opções
 def menuOpcoes():
     # Lista do menu, organizada para o usuário
@@ -36,9 +39,16 @@ print("No que podemos te ajudar hoje?")
 
 while True:
     opcao = menuOpcoes()
+    
     if opcao == 1:
         print("Implementações futuras...")
     
+    elif opcao == 4:
+        if carrinho == []: # Vê se o carrinho está vazio
+            print("Por favor, insira produtos no seu carrinho!")
+        else: 
+            print("Implementação futura")
+
     # Encerrando a loja virtual
     elif opcao == 5: 
         print("Obrigada por utilizar nossa loja virtual! A Vinheria Agnello agradece pela sua escolha e confiança!")
