@@ -1,2 +1,2 @@
-# Checkpoint2-Python
-Checkpoint 2 de Computational Thinking with Python na @FIAP.
+# Checkpoint3-Python
+Checkpoint 3 de Computational Thinking with Python na @FIAP.
