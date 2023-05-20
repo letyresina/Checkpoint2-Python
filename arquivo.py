@@ -149,6 +149,7 @@ def mostrarCarrinho():
         print("{:<30} R${:<10.2f}".format("Valor total:", valorTotal))
         print("{:<30} {:<10.0%}".format("Desconto:", desconto))
         print("{:<30} R${:<10.2f}".format("Valor com desconto:", valorFinal))
+        time.sleep(1)
 
 # Mensagem de boas vindas
 print("Seja bem vindo(a) à loja virtual da Vinheria Agnello!")
