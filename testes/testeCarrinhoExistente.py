@@ -19,6 +19,7 @@ precosVinho = {
     'grenache': 60
 }
 
+    
 carrinho = []
 
 def adicionarCarrinho():
@@ -27,32 +28,34 @@ def adicionarCarrinho():
     if vinho in precosVinho:
         quantidade = int(input("Informe a quantidade desejada: "))
 
-        item = {
-            vinho,
-            precosVinho[vinho] * quantidade,
-            quantidade
-        }
+        vinhoExistente = None
+        for item in carrinho:
+            if item['vinho'] == vinho:
+                vinhoExistente = item
+                break
 
-        carrinho.append(item)
-        print("Adicionado ao carrinho com sucesso!")
-        # colocar um time de aguardo!
+        if vinhoExistente:
+            vinhoExistente['quantidade'] += quantidade
+            vinhoExistente['precoTotal'] += precosVinho[vinho]
+
+        else:
+            item = {
+                'vinho': vinho,
+                'precoTotal': precosVinho[vinho] * quantidade,
+                'quantidade': quantidade
+            }
+
+            carrinho.append(item)
+            print("Adicionado ao carrinho com sucesso!")
+            # colocar um time de aguardo!
 
     else:
         print("Produto não encontrado! Por favor, tente novamente!")
         # colocar um time de aguardo!
 
-adicionarCarrinho()
 
-# Função para desconto progressivo (finalizar)
-def descontoProgressivo(total): 
-    # Caso o carrinho possua mais de 3 garrafas
-    if (len(carrinho) == 3): # desconto de 10% => 0.1
-        print("Fazer depois")
-    elif (len(carrinho) == 4): # desconto de 20% = 0.2
-        print("Fazer depois")
-    elif (len(carrinho) >= 5): # desconto de 30% => 0.3
-        print("Fazer depois")
-    else:
-        print("Okay, foi!")
+while True:
 
-descontoProgressivo()
+    adicionarCarrinho()
+
+    print(carrinho)
