@@ -106,6 +106,50 @@ def adicionarCarrinho():
         print("Produto não encontrado! Por favor, tente novamente!")
         time.sleep(1)
 
+def calcularDescontoProgressivo(quantidadeTotal):
+    desconto = 0.0
+    if quantidadeTotal >= 5:
+        desconto = 0.3  # 30% de desconto para 5 ou mais itens
+    elif quantidadeTotal >= 4:
+        desconto = 0.2  # 20% de desconto para 4 itens
+    elif quantidadeTotal >= 3:
+        desconto = 0.1  # 10% de desconto para 3 itens
+    return desconto
+
+
+def mostrarCarrinho():
+    if carrinho == []:
+        print("Seu carrinho está vazio...")
+    else:
+        print("Seu Carrinho")
+        print("{:<20} {:<10} {:<10} {:<10}".format("Produto", "Preço", "Quantidade", "Total"))
+        print("-" * 60)
+
+        quantidadeTotal = 0
+        valorTotal = 0.0
+
+        for item in carrinho:
+            vinho = item['vinho']
+            precoUnitario = precosVinho[vinho]
+            quantidade = item['quantidade']
+            precoTotal = item['precoTotal']
+
+            quantidadeTotal += quantidade
+            valorTotal += precoTotal
+
+            print("{:<20} R${:<10.2f} {:<10} R${:<10.2f}".format(vinho, precoUnitario, quantidade, precoTotal))
+
+        print("-" * 60)
+
+        desconto = calcularDescontoProgressivo(quantidadeTotal)
+        valorDesconto = valorTotal * desconto
+        valorFinal = valorTotal - valorDesconto
+
+        print("{:<30} {:<10}".format("Quantidade total de itens:", quantidadeTotal))
+        print("{:<30} R${:<10.2f}".format("Valor total:", valorTotal))
+        print("{:<30} {:<10.0%}".format("Desconto:", desconto))
+        print("{:<30} R${:<10.2f}".format("Valor com desconto:", valorFinal))
+
 # Mensagem de boas vindas
 print("Seja bem vindo(a) à loja virtual da Vinheria Agnello!")
 print("No que podemos te ajudar hoje?")
@@ -123,12 +167,13 @@ while True:
 
     # Visualizar carrinho de compras
     elif opcao == 3:
-         print("Implementação futura")
+        mostrarCarrinho()
     
     # Finalizar compra
     elif opcao == 4:
         if carrinho == []: # Vê se o carrinho está vazio
             print("Por favor, insira produtos no seu carrinho antes de prosseguir!")
+            time.sleep(1)
         else: 
             print("Implementação futura")
 
