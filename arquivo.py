@@ -1,7 +1,3 @@
-''' 
-    Leticia Resina - RM 98069
-'''
-
 import time # Essa importação vai ser utilizada no decorrer do programa para facilitar a visualização do usuário!
 
 # Lista que vai ser utilizada para encontrar os preços do vinho, sem a necessidade do usuário inserir os preços
@@ -76,7 +72,39 @@ def listarVinhos():
     print("-------------------------------------------------------------------")
     time.sleep(2) # Para dar tempo do usuário ler antes de aparecer o menu novamente
 
+# Função adicionar carrinho -> tratamento feito dentro da própria função
+def adicionarCarrinho():
+    vinho = input("Digite o nome do vinho desejado: ").lower().replace(" ", "")
+    
+    if vinho in precosVinho:
+        quantidade = int(input("Informe a quantidade desejada: "))
 
+        vinhoExistente = None
+        for item in carrinho:
+            if item['vinho'] == vinho:
+                vinhoExistente = item
+                break
+
+        if vinhoExistente:
+            vinhoExistente['quantidade'] += quantidade
+            vinhoExistente['precoTotal'] += precosVinho[vinho]
+            print("Adicionado ao carrinho com sucesso!")
+            time.sleep(1)
+
+        else:
+            item = {
+                'vinho': vinho,
+                'precoTotal': precosVinho[vinho] * quantidade,
+                'quantidade': quantidade
+            }
+
+            carrinho.append(item)
+            print("Adicionado ao carrinho com sucesso!")
+            time.sleep(1)
+
+    else:
+        print("Produto não encontrado! Por favor, tente novamente!")
+        time.sleep(1)
 
 # Mensagem de boas vindas
 print("Seja bem vindo(a) à loja virtual da Vinheria Agnello!")
@@ -91,7 +119,7 @@ while True:
 
     # Adicionar vinhos no carrinho
     elif opcao == 2:
-         print("Implementação futura")
+        adicionarCarrinho()
 
     # Visualizar carrinho de compras
     elif opcao == 3:
